@@ -7,7 +7,7 @@
  * Return: the number of characters printed
  */
 
-int _printf(const char *format, ...);
+int _printf(const char *format, ...)
 {
 	va_list args;
 
@@ -34,7 +34,9 @@ int _printf(const char *format, ...);
 					if (s != NULL)
 						write(1, s, strlen(s));
 					else
-						write(1, "(NULL)", 6);
+						{	
+							write(1, "(NULL)", 6);
+						}
 						break;
 					}
 				case'%':
