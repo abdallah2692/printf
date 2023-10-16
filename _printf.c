@@ -22,13 +22,11 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'c')
 			{
-				print_char(args);
-				count++;
+				count += print_char(args);
 			}
 			else if (*format == 's')
 			{
-				print_string(args);
-				count++;
+				count += print_string(args);
 			}
 		}
 		else
