@@ -18,7 +18,7 @@ int print_char(va_list args)
  * @args: arguments list
  * Return: number of printer characters
  */
-int print_s(va_list args)
+int print_string(va_list args)
 {
 	char *s = va_arg(args, char*);
 	int count = 0;

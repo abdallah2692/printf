@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 's')
 			{
-				print_s(args);
+				print_string(args);
 				count++;
 			}
 		}
