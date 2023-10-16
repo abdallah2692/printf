@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * _printf - produces output according to a format
  * @format: format string
@@ -17,7 +18,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '%')
 			{
-				putchar('%');
+				fputc('%', stdout);
 				count++;
 			}
 			else if (*format == 'c')
@@ -31,7 +32,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			putchar(*format);
+			fputc(*format);
 			count++;
 		}
 			format++;
