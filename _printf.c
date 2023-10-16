@@ -27,6 +27,11 @@ int _printf(const char *format, ...)
 			{
 				count += print_string(args);
 			}
+			else if (*format == '\0')
+			{
+				_putchar('%');
+				count++;
+			}
 		}
 		else
 		{
