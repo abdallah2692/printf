@@ -23,40 +23,40 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 					{
-						char c = va_arg(args, int);
+					char c = va_arg(args, int);
 
-						write(1, &c, 1);
-						count++;
-						break;
+					write(1, &c, 1);
+					count++;
+					break;
 					}
 				case 's':
 					{
-						char *s = va_arg(args, char *);
+					char *s = va_arg(args, char *);
 
 					if (s != NULL)
-						{
-							write(1, s, strlen(s));
-							count += strlen(s);
-						}
+					{
+						write(1, s, strlen(s));
+						count += strlen(s);
+					}
 					else
-						{	
-							write(1, "(NULL)", 6);
-							count +=6;
-						}
-						break;
+					{
+						write(1, "(NULL)", 6);
+						count += 6;
+					}
+					break;
 					}
 				case'%':
 					{
-						write(1, "%", 1);
-						count++;
-						break;
+					write(1, "%", 1);
+					count++;
+					break;
 					}
 			}
 		}
 		else
 		{
-			write(1, format, 1);
-			count++;
+		write(1, format, 1);
+		count++;
 		}
 		format++;
 	}
