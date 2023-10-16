@@ -17,8 +17,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '%')
 			{
-				_putchar('%');
-				count++;
+				count += print_per(args);
 			}
 			else if (*format == 'c')
 			{

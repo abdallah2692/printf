@@ -11,4 +11,5 @@ int _printf(const char *format, ...);
 int _putchar(int c);
 int print_char(va_list args);
 int print_string(va_list args);
+int print_per(va_list args);
 #endif
