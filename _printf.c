@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int count = 0
+	int count = 0;
 
 	va_start(args, format);
 
@@ -34,8 +34,10 @@ int _printf(const char *format, ...)
 						char *s = va_arg(args, char *);
 
 					if (s != NULL)
-						write(1, s, strlen(s));
-						count += strlen(s);
+						{
+							write(1, s, strlen(s));
+							count += strlen(s);
+						}
 					else
 						{	
 							write(1, "(NULL)", 6);
@@ -46,7 +48,7 @@ int _printf(const char *format, ...)
 				case'%':
 					{
 						write(1, "%", 1);
-						count++
+						count++;
 						break;
 					}
 			}
