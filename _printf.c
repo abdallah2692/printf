@@ -10,6 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
+	int count = 0
 
 	va_start(args, format);
 
@@ -25,6 +26,7 @@ int _printf(const char *format, ...)
 						char c = va_arg(args, int);
 
 						write(1, &c, 1);
+						count++;
 						break;
 					}
 				case 's':
@@ -33,15 +35,18 @@ int _printf(const char *format, ...)
 
 					if (s != NULL)
 						write(1, s, strlen(s));
+						count += strlen(s);
 					else
 						{	
 							write(1, "(NULL)", 6);
+							count +=6;
 						}
 						break;
 					}
 				case'%':
 					{
 						write(1, "%", 1);
+						count++
 						break;
 					}
 			}
@@ -49,9 +54,10 @@ int _printf(const char *format, ...)
 		else
 		{
 			write(1, format, 1);
+			count++;
 		}
 		format++;
 	}
 	va_end(args);
-	return (0);
+	return (count);
 }
