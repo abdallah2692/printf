@@ -2,7 +2,6 @@
 /**
  * _printf - produces output according to a format
  * @format: format string
- *
  * Return: the number of characters printed
  */
 int _printf(const char *format, ...)
@@ -23,21 +22,13 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'c')
 			{
-				int c = va_arg(args, int);
-
-				_putchar(c);
+				print_char(args);
 				count++;
 			}
 			else if (*format == 's')
 			{
-				char *s = va_arg(args, char *);
-
-				while (s != NULL && *s != '\0')
-				{
-					_putchar(*s);
-					count++;
-					s++;
-				}
+				print_string(args);
+				count++;
 			}
 		}
 		else
