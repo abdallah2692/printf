@@ -52,7 +52,7 @@ int print_per(va_list args)
 {
 	int count = 0;
 
-	void(args);
+	(void)args;
 	_putchar ('%');
 	count++;
 	return (1);
