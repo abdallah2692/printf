@@ -14,30 +14,32 @@ int print_char(va_list args)
 	return (count);
 }
 /**
- * print_string - prints a string
+ * print_s - prints a string
  * @args: arguments list
  * Return: number of printer characters
  */
-int print_string(va_list args)
+int print_s(va_list args)
 {
 	char *s = va_arg(args, char*);
-	int i = 0;
 	int count = 0;
-		if (s == NULL)
-		{
-			_putchar ('(');
-			_putchar ('n');
-			_putchar ('u');
-			_putchar ('l');
-			_putchar ('l');
-			_putchar (')');
-			return (6);
-		}
-	while (s[i])
+
+	if (s == NULL)
 	{
-		_putchar(s[i]);
-		i++;
-		count++;
+		_putchar ('(');
+		_putchar ('n');
+		_putchar ('u');
+		_putchar ('l');
+		_putchar ('l');
+		_putchar (')');
+		return (6);
+	}
+	else
+	{
+		for (; *s; ++s)
+		{
+			_putchar(*s);
+			count++;
+		}
 	}
 	return (count);
 
