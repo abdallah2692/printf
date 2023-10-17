@@ -58,32 +58,3 @@ int print_per(va_list args)
 	return (1);
 }
 
-// /**
-//  * print_int - prints %
-//  * @args: the argument list
-//  * Return: length
-//  */
-
-
-// int print_int(va_list args) {
-//     int b = va_arg(args, int);
-//     char src[50];
-//     sprintf(src, "%d", b);
-//     write(1, src, strlen(src));
-//     return (strlen(src));
-// }
-
-// /**
-//  * print_per - prints unsinged int
-//  * @args: the argument list
-//  * Return: length
-//  */
-
-
-// int print_unsigned(va_list args) {
-//     unsigned int a = va_arg(args, unsigned int);
-//     char str[50];
-//     sprintf(str, "%u", a);
-//     write(1, str, strlen(str));
-//     return (strlen(str));
-// }
