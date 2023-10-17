@@ -1,29 +1,36 @@
 #include "main.h"
 /**
- * print_dig - handling the i & d specifier
- * @format: format digit
- * Return: nothing
+ * _printf - produces output according to a format
+ * @format: format string
+ * Return: number of integers
  */
 
-void print_dig(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	va_list args;
-    va_start(args, format);
 
-    while (*format != '\0')
-    {
-        if (*format == '%')
-        {
-            format++;
-            if (*format == 'd' || *format == 'i')
-            {
-                print_int(va_arg(args, int));
-            }
-        }
-        else
-			putchar(*format);
-        format++;
-    }
+	va_start(args, format);
 
-    va_end(args);
+	while (*format != '\0')
+	{
+		if (*format == '%')
+		{
+			format++;
+			if (*format == 'd' || *format == 'i')
+			{
+				int value(va_arg(args, int));
+				printed = print_integer(value);
+				count += printed;
+			}
+			else
+			{
+				_putchar('%');
+				_putchar(*format);
+
+			}
+
+			va_end(args);
+			return (count);
+		}
+	}
 }

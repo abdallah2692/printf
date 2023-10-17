@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <limits.h>
 
 
 int _printf(const char *format, ...);
@@ -13,6 +14,6 @@ int _putchar(int c);
 int print_char(va_list args);
 int print_string(va_list args);
 int print_per(va_list args);
-void print_int(int a);
-void print_dig(const char *format, ...);
+void print_buffer(char buffer[], int *buff_ind);
+int print_integer(int value);
 #endif
