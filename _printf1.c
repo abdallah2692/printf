@@ -5,6 +5,14 @@
  * Return: number of integers
  */
 
+#include "main.h"
+
+/**
+ * _printf - produces output according to a format
+ * @format: format string
+ * Return: number of integers
+ */
+
 int _printf(const char *format, ...)
 {
 	int count = 0;
@@ -20,7 +28,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == 'd' || *format == 'i')
 			{
-				int val = (va_arg(args, int));
+				int val = va_arg(args, int);
 				pri = print_int(val);
 				count += pri;
 			}
@@ -37,6 +45,7 @@ int _printf(const char *format, ...)
 			format++;
 		}
 	}
+
 	va_end(args);
 	return (count);
 }
