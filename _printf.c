@@ -6,7 +6,6 @@
  */
 int _printf(const char *format, ...)
 {
-	int a;
 	va_list args;
 	int count = 0;
 
@@ -35,11 +34,11 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'd' || *format == 'i')
 			{
-				count += print_int(a);
+				count += print_int(args);
 			}
 			else if (*format == 'u')
 			{
-				count += print_unsi(a);
+				count += print_unsi(args);
 			}
 		}
 		else

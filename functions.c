@@ -58,23 +58,4 @@ int print_per(va_list args)
 	return (1);
 }
 
-int print_int(int a)
-{
-    if (a < 0)
-    {
-        _putchar('-');
-        a = -a;
-    }
-    return (print_unsi((unsigned int)a));
-}
 
-int print_unsi(unsigned int a)
-{
-    int n = 0;
-    if (a / 10)
-    {
-        n = print_unsi(a / 10);
-    }
-    _putchar((a % 10) + '0');
-    return (n + 1);
-}
