@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 			else if (*format == 'u')
 			{
 				unsigned int a = va_arg(args, unsigned int);
-				count += print_unsigned(a);
+				count += print_unsi(a);
 			}
 		}
 		else
