@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL)
 		return (-1);
-	while (*format != '\0')
+	for (; *format != '\0'; format++)
 	{
 		if (*format == '%')
 		{
@@ -30,13 +30,11 @@ int _printf(const char *format, ...)
 				count += print_string(args);
 			}
 			else if (*format == '\0')
-			{
 				return (-1);
-			}
-			else
 			{
 				_putchar('%');
 				_putchar(*format);
+				count += 2;
 			}
 		}
 		else
@@ -44,7 +42,6 @@ int _printf(const char *format, ...)
 			_putchar(*format);
 			count++;
 		}
-		format++;
 	}
 	va_end(args);
 	return (count);
