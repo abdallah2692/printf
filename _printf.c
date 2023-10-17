@@ -31,8 +31,6 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == '\0')
 			{
-				_putchar('%');
-				count++;
 				return (-1);
 			}
 		}
