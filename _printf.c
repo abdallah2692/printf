@@ -17,20 +17,17 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (*format == '%')
+			if (*format == '\0')
 			{
-				count += print_per(args);
+				return (-1);
 			}
 			else if (*format == 'c')
-			{
 				count += print_char(args);
-			}
 			else if (*format == 's')
-			{
 				count += print_string(args);
-			}
-			else if (*format == '\0')
-				return (-1);
+			else if (*format == '%')
+				count += print_per(args);
+			else
 			{
 				_putchar('%');
 				_putchar(*format);
