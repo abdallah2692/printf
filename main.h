@@ -14,5 +14,5 @@ int print_char(va_list args);
 int print_string(va_list args);
 int print_per(va_list args);
 void print_int(int a);
-void print_dig(const char *format, ...);
+int print_dig(const char *format, ...);
 #endif

@@ -5,7 +5,7 @@
  * Return: nothing
  */
 
-void print_dig(const char *format, ...)
+int print_dig(const char *format, ...)
 {
 	va_list args;
     va_start(args, format);
@@ -21,9 +21,10 @@ void print_dig(const char *format, ...)
             }
         }
         else
-			putchar(*format);
-        format++;
+			_putchar(*format);
+		format++;
     }
 
     va_end(args);
+	return (0);
 }
