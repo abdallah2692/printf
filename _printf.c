@@ -32,14 +32,24 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				count++;
 			}
+			else if (*format == 'd' || *format == 'i')
+			{
+				int digit = va_arg(args, int);
+				count += print_int(digit);
+			}
+			else if (*format == 'u')
+			{
+				unsigned int a = va_arg(args, unsigned int);
+				count += print_unsigned(a);
+			}
 		}
 		else
 		{
 			_putchar(*format);
 			count++;
 		}
-			format++;
+		format++;
 	}
-		va_end(args);
-		return (count);
+	va_end(args);
+	return (count);
 }

@@ -58,3 +58,17 @@ int print_per(va_list args)
 	return (1);
 }
 
+/**
+ * print_per - prints %
+ * @args: the argument list
+ * Return: 1
+ */
+unsigned int print_int(va_list args)
+{
+	int count = 0;
+
+	(void)args;
+	_putchar ('u');
+	count++;
+	return (1);
+}
