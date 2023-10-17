@@ -2,7 +2,7 @@
 /**
  * print_dig - handling the i & d specifier
  * @format: format digit
- * Return: nothing
+ * Return: 0
  */
 
 int print_dig(const char *format, ...)
