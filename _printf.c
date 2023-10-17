@@ -6,6 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
+	int a;
 	va_list args;
 	int count = 0;
 
@@ -31,6 +32,16 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				count++;
+			}
+			else if (*format == 'd' || *format == 'i')
+			{
+				int a = va_arg(args, int);
+				count += print_int(a);
+			}
+			else if (*format == 'u')
+			{
+				unsigned int a = va_arg(args, unsigned int);
+				count += print_unsi(a);
 			}
 		}
 		else
