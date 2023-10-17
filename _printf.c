@@ -32,14 +32,6 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				count++;
 			}
-			else if (*format == 'd' || *format == 'i')
-			{
-				count += print_int(args);
-			}
-			else if (*format == 'u')
-			{
-				count += print_unsi(args);
-			}
 		}
 		else
 		{

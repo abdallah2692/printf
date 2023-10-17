@@ -13,6 +13,4 @@ int _putchar(int c);
 int print_char(va_list args);
 int print_string(va_list args);
 int print_per(va_list args);
-int print_int(va_list args);
-unsigned int print_unsi(va_list args);
 #endif
