@@ -7,6 +7,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <limits.h>
+#include <stdio.h>
 
 #define BUFF_SIZE 1024
 int _printf(const char *format, ...);
@@ -14,6 +15,6 @@ int _putchar(int c);
 int print_char(va_list args);
 int print_string(va_list args);
 int print_per(va_list args);
-void print_buffer(char buffer[], int *buff_ind);
+void print_buff(char buffer[], int *buff_ind);
 int print_integer(int value);
 #endif

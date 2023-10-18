@@ -21,14 +21,14 @@ int _printf(const char *format, ...)
 				int value = va_arg(args, int);
 				printed = print_integer(value);
 				count += printed;
+
 			}
+
 			else
 			{
-				_putchar('%');
 				_putchar(*format);
-
+				format++;
 			}
-
 		}
 	}
 	va_end(args);

@@ -87,6 +87,7 @@ int print_integer(int value)
 	}
 	return (printed);
 }
+
 /**
  * print_buffer - prints the contents of a buffer and
  * then resets the buffer index to 0
