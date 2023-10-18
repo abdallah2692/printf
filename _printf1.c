@@ -9,25 +9,32 @@ int _printf1(const char *format, ...)
 {
 	va_list args;
 	int count = 0;
-
-	int printed;
+	char buffer[4096];
 
 	va_start(args, format);
 
-	while (*format != '\0')
+	if (format == NULL)
+		return (-1);
+	for (; *format != '\0'; format++)
 	{
 		if (*format == '%')
 		{
 			format++;
 			if (*format == 'd' || *format == 'i')
 			{
-				int value = va_arg(args, int);
+				int d = va_arg(args, int);
+				int len = sprintf(buffer, "%d", d);
 
-				printed = print_integer(value);
-				count += printed;
+				write(1, buffer, len);
+				count += len;
 			}
-
 		}
+		else
+		{
+			write(1, format, 1);
+			count++;
+		}
+		format++;
 	}
 	va_end(args);
 	return (count);
