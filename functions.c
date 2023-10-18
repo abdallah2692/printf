@@ -66,6 +66,8 @@ int print_integer(int value)
 {
 	char buffer[32];
 	int printed = 0;
+	int i = 0;
+	int l;
 
 	if (value < 0)
 	{
@@ -73,8 +75,6 @@ int print_integer(int value)
 		printed++;
 		value = -value;
 	}
-	int i = 0;
-	int l;
 
 	do {
 		buffer[i++] = '0' + (value % 10);

@@ -8,7 +8,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-
+	int count = 0;
 	va_start(args, format);
 
 	while (*format != '\0')
@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == 'd' || *format == 'i')
 			{
-				int value(va_arg(args, int));
+				int value = va_arg(args, int);
 				printed = print_integer(value);
 				count += printed;
 			}
@@ -29,8 +29,8 @@ int _printf(const char *format, ...)
 
 			}
 
-			va_end(args);
-			return (count);
 		}
 	}
+	va_end(args);
+	return (count);
 }

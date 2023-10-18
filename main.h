@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <limits.h>
 
-
+#define BUFF_SIZE 1024
 int _printf(const char *format, ...);
 int _putchar(int c);
 int print_char(va_list args);
