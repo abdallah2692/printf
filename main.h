@@ -17,4 +17,5 @@ int print_string(va_list args);
 int print_per(va_list args);
 void print_buff(char buffer[], int *buff_ind);
 int print_integer(int value);
+int _printf1(const char *format, ...);
 #endif
