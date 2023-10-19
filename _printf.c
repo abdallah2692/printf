@@ -11,7 +11,8 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	if (format == NULL){
+	if (format == NULL)
+	{
 		va_end(args);
 		return (-1);
 	}
@@ -31,21 +32,16 @@ int _printf(const char *format, ...)
 				count += print_string(args);
 			else if (*format == '%')
 				count += print_per(args);
-			else if (*format == 'd' || *format == 'i'){
-				int d = va_arg(args, int);
-					count += print_integer(d);
-			}
+			else if (*format == 'd' || *format == 'i')
+				count += print_integer(va_arg(args, int));
 			else
 			{
-				_putchar('%');
-				_putchar(*format);
-				count += 2;
+				count += (write(1, "%", 1) + write(1, format - 1, 1));
 			}
 		}
 		else
 		{
-			_putchar(*format);
-			count++;
+			count += write(1, format, 1);
 		}
 	}
 	va_end(args);
