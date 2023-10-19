@@ -26,22 +26,25 @@ int _printf(const char *format, ...)
 				va_end(args);
 				return (-1);
 			}
-			else if (*format == 'c')
-				count += print_char(args);
-			else if (*format == 's')
-				count += print_string(args);
-			else if (*format == '%')
-				count += print_per(args);
+			else if (*format == 'c') count += print_char(args);
+			else if (*format == 's') count += print_string(args);
+			else if (*format == '%') count += print_per(args);
 			else if (*format == 'd' || *format == 'i')
-				count += print_integer(va_arg(args, int));
+			{
+				int d = va_arg(args, int);
+					count += print_integer(d);
+			}
 			else
 			{
-				count += (write(1, "%", 1) + write(1, format - 1, 1));
+				_putchar('%');
+				_putchar(*format);
+				count += 2;
 			}
 		}
 		else
 		{
-			count += write(1, format, 1);
+			_putchar(*format);
+			count++;
 		}
 	}
 	va_end(args);
