@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 	int count = 0;
 
 	va_start(args, format);
+
 	if (format == NULL){
 		va_end(args);
 		return (-1);
