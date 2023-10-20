@@ -29,14 +29,13 @@ int print_per(va_list args)
 }
 /**
  * print_integer - for printing integers
- * @args: the argument list
+ * @value: the entered value
  * Return: number of printed integers
  */
-int print_integer(va_list args)
+int print_integer(int value)
 {
 	char buffer[32];
 	int count = 0;
-	int value = va_arg(args, int);
 	int i = 0;
 	int l;
 
@@ -79,11 +78,3 @@ void print_buffer(char buffer[], int *buff_ind)
 	}
 	*buff_ind = 0;
 }
-
-format_f funcs[] = {
-	{'c', print_char},
-	{'s', print_string},
-	{'%', print_per},
-	{'d', print_integer},
-	{'i', print_integer},
-};
