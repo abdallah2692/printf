@@ -67,13 +67,13 @@ int print_integer(int value)
  */
 void print_buffer(char buffer[], int *buff_ind)
 {
-	int i;
+	int l;
 
 	if (*buff_ind > 0)
 	{
-		for (i = 0; i < *buff_ind; i++)
+		for (l = 0; l < *buff_ind; l++)
 		{
-			_putchar(buffer[i]);
+			_putchar(buffer[l]);
 		}
 	}
 	*buff_ind = 0;
