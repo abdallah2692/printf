@@ -8,6 +8,8 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int count = 0;
+	int i = 0;
+	int j = 0;
 
 	va_start(args, format);
 
@@ -16,35 +18,24 @@ int _printf(const char *format, ...)
 		va_end(args);
 		return (-1);
 	}
-	for (; *format != '\0'; format++)
+	while (format[i] != '\0')
 	{
-		if (*format == '%')
-		{
-			format++;
-			if (*format == '\0')
-			{
-				va_end(args);
-				return (-1);
-			}
-			else if (*format == 'c') count += print_char(args);
-			else if (*format == 's') count += print_string(args);
-			else if (*format == '%') count += print_per(args);
-			else if (*format == 'd' || *format == 'i')
-			{
-				int d = va_arg(args, int);
-					count += print_integer(d);
-			}
-			else
-			{
-				_putchar('%');
-				_putchar(*format);
-				count += 2;
-			}
+		if (format[i] != '%')
+		{	_putchar(format[i]);
+			count++;
+			i++;
 		}
 		else
 		{
-			_putchar(*format);
-			count++;
+			while (functions[j].s)
+			{
+				if (format[i + 1] == functions[j].s)
+				{
+					count += functions[j].function(args);
+				}
+				j++;
+			}
+			i += 2;
 		}
 	}
 	va_end(args);

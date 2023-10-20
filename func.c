@@ -62,30 +62,31 @@ int print_per(va_list args)
  * @value: the entered value
  * Return: number of printed integers
  */
-int print_integer(int value)
+int print_integer(va_list args)
 {
 	char buffer[32];
-	int printed = 0;
+	int count = 0;
+	int value = va_arg(args, int);
 	int i = 0;
 	int l;
 
 	if (value < 0)
 	{
 		putchar('-');
-		printed++;
+		count++;
 		value = -value;
 	}
 
 	do {
 		buffer[i++] = '0' + (value % 10);
 		value /= 10;
-		printed++;
+		count++;
 	} while (value > 0);
 	for (l = i - 1; l >= 0; l--)
 	{
 		putchar(buffer[l]);
 	}
-	return (printed);
+	return (count);
 }
 
 /**
@@ -109,4 +110,10 @@ void print_buffer(char buffer[], int *buff_ind)
 	*buff_ind = 0;
 }
 
-
+format_f functions[] = {
+        {'c', print_char},
+        {'s', print_string},
+        {'%', print_per},
+        {'d', print_integer},
+        {'i', print_integer},
+};
