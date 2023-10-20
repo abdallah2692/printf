@@ -31,7 +31,9 @@ int _printf(const char *format, ...)
 			while (funcs[l].s)
 			{
 				if (format[i + 1] == funcs[l].s)
+				{
 					count += funcs[l].function(args);
+				}
 				l++;
 			}
 			i += 2;
