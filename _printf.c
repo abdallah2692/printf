@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0;
 	int i = 0;
-	int j = 0;
+	int l;
 
 	va_start(args, format);
 
@@ -25,23 +25,16 @@ int _printf(const char *format, ...)
 			count++;
 			i++;
 		}
-		else if (format[i + 1] != '\0')
+		else 
 		{
-			while (functions[j].s)
+			l = 0;
+			while (functions[l].s)
 			{
-				if (format[i + 1] == functions[j].s)
-				{
-					count += functions[j].function(args);
-				}
-				j++;
+				if (format[i + 1] == functions[l].s)
+					count += functions[l].function(args);
+				l++;
 			}
 			i += 2;
-		}
-		else
-		{
-			_putchar('%');
-			_putchar(format[i + 1]);
-			count += 2;
 		}
 	}
 	va_end(args);

@@ -72,7 +72,7 @@ int print_integer(va_list args)
 
 	if (value < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		count++;
 		value = -value;
 	}
@@ -84,7 +84,7 @@ int print_integer(va_list args)
 	} while (value > 0);
 	for (l = i - 1; l >= 0; l--)
 	{
-		putchar(buffer[l]);
+		_putchar(buffer[l]);
 	}
 	return (count);
 }
@@ -104,7 +104,7 @@ void print_buffer(char buffer[], int *buff_ind)
 	{
 		for (i = 0; i < *buff_ind; i++)
 		{
-			putchar(buffer[i]);
+			_putchar(buffer[i]);
 		}
 	}
 	*buff_ind = 0;
