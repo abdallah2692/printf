@@ -14,36 +14,6 @@ int print_char(va_list args)
 	return (count);
 }
 /**
- * print_string - prints a string
- * @args: arguments list
- * Return: number of printer characters
- */
-int print_string(va_list args)
-{
-	char *s = va_arg(args, char*);
-	int count = 0;
-
-	if (s == NULL)
-	{
-		_putchar ('(');
-		_putchar ('n');
-		_putchar ('u');
-		_putchar ('l');
-		_putchar ('l');
-		_putchar (')');
-		return (6);
-	}
-	else
-	{
-		for (; *s; ++s)
-		{
-			_putchar(*s);
-			count++;
-		}
-	}
-	return (count);
-}
-/**
  * print_per - prints %
  * @args: the argument list
  * Return: 1
@@ -59,7 +29,7 @@ int print_per(va_list args)
 }
 /**
  * print_integer - for printing integers
- * @value: the entered value
+ * @args: the argument list
  * Return: number of printed integers
  */
 int print_integer(va_list args)
@@ -110,10 +80,10 @@ void print_buffer(char buffer[], int *buff_ind)
 	*buff_ind = 0;
 }
 
-format_f functions[] = {
-        {'c', print_char},
-        {'s', print_string},
-        {'%', print_per},
-        {'d', print_integer},
-        {'i', print_integer},
+format_f funcs[] = {
+	{'c', print_char},
+	{'s', print_string},
+	{'%', print_per},
+	{'d', print_integer},
+	{'i', print_integer},
 };

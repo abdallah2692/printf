@@ -28,7 +28,7 @@ typedef struct format_specifiers
 		char s;
 		int (*function)(va_list);
 } format_f;
-extern format_f functions[];
+extern format_f funcs[];
 
 
 #endif

@@ -25,13 +25,13 @@ int _printf(const char *format, ...)
 			count++;
 			i++;
 		}
-		else 
+		else
 		{
 			l = 0;
-			while (functions[l].s)
+			while (funcs[l].s)
 			{
-				if (format[i + 1] == functions[l].s)
-					count += functions[l].function(args);
+				if (format[i + 1] == funcs[l].s)
+					count += funcs[l].function(args);
 				l++;
 			}
 			i += 2;
