@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 			count++;
 			i++;
 		}
-		else
+		else if (format[i + 1] != '\0')
 		{
 			while (functions[j].s)
 			{
@@ -36,6 +36,12 @@ int _printf(const char *format, ...)
 				j++;
 			}
 			i += 2;
+		}
+		else
+		{
+			_putchar('%');
+			_putchar(format[i + 1]);
+			count += 2;
 		}
 	}
 	va_end(args);
