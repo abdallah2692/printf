@@ -20,5 +20,4 @@ int print_integer(int value);
 int _printf1(const char *format, ...);
 
 
-
 #endif

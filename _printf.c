@@ -26,9 +26,7 @@ int _printf(const char *format, ...)
 			else if (*format == '%')
 				count += print_per(args);
 			else if (*format == 'd' || *format == 'i')
-			{
 				count += print_integer(va_arg(args, int));
-			}
 			else
 			{
 				_putchar('%');
@@ -42,7 +40,6 @@ int _printf(const char *format, ...)
 			count++;
 		}
 	}
-
 	va_end(args);
 	return (count);
 }
